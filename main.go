@@ -97,6 +97,13 @@ func (c *CheckOutApp) checkOutInformation() {
 }
 
 func (c *CheckOutApp) displayOutput() {
+	fmt.Println("SEMICOLON STORES")
+	fmt.Println("MAIN BRANCH")
+	fmt.Println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.")
+	fmt.Println("TEL: 03293828343")
+	fmt.Printf("DATE: %s", c.getDateAndTime())
+	fmt.Printf("Cashier: %s", c.cashiersName)
+	fmt.Printf("Customer Name: %s", c.customersName)
 	fmt.Println("=====================================================")
 	fmt.Println("\t\tITEM\tQTY\tPRICE\t  TOTAL(NGN)")
 	fmt.Println("-----------------------------------------------------")
