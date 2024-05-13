@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -74,13 +75,30 @@ func (c *CheckOutApp) checkOutInformation() {
 	}
 	c.itemPrice = append(c.itemPrice, pricePerUnit)
 
-	fmt.Println("Add more items?")
 	var response string
-	_, err5 := fmt.Scanf("%s", &response)
-	if err5 != nil {
-		fmt.Println("Error: ", err5)
-	}
-	for response == "yes" {
 
+	for {
+		fmt.Println("Add more items?")
+		_, err5 := fmt.Scanf("%s", &response)
+		if err5 != nil {
+			fmt.Println("Error: ", err5)
+			break
+		}
+		if strings.ToLower(response) != "no" {
+			break
+		}
 	}
+
+	fmt.Println("What is your name?")
+	_, err6 := fmt.Scanf("%s", &c.cashiersName)
+	if err6 != nil {
+		fmt.Println("Error: ", err6)
+	}
+}
+
+func (c *CheckOutApp) displayOutput() {
+	fmt.Println("=====================================================")
+	fmt.Println("\t\tITEM\tQTY\tPRICE\t  TOTAL(NGN)")
+	fmt.Println("-----------------------------------------------------")
+
 }
